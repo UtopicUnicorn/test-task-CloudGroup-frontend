@@ -9,6 +9,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { pipe } from 'rxjs';
+import { TodoInterface } from './interfaces/todo.interface';
 
 @Component({
   selector: 'app-root',
@@ -52,7 +53,22 @@ export class AppComponent implements OnInit {
   }
 
   trackByMethod(index: number, el: any): number {
+    console.log(el);
     return el.id;
+  }
+
+  changeStyle(todo: TodoInterface) {
+    const id = todo.id;
+    // todo.isCompleted = !todo.isCompleted;
+
+    const status = !todo.isCompleted;
+    todo.isCompleted = !todo.isCompleted;
+    const obj = {
+      id: id,
+      isCompleted: status,
+    };
+
+    this.appService.updateTodoStatus(obj).subscribe(resp => (todo = resp));
   }
 
   onChangeStatus($event: any) {

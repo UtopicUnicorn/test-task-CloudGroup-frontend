@@ -1,12 +1,12 @@
 .header{
   justify-content: center;
-  align-content: end;
+  align-content: center;
   flex-direction: row;
 }
 
 .spacer{
   flex: 1 1 auto;
-  margin: 40px;
+  //margin: 40px;
 }
 
 .category{
@@ -19,7 +19,7 @@
 
 .title{
   justify-content: center;
-  align-items: center;
+  align-content: center;
 }
 
 .button{
@@ -32,11 +32,6 @@
   width: 90%;
   border-width: 1px;
   border-color: #000;
-}
-.title{
-  //justify-content: center;
-  //align-content: center;
-  //flex-direction: row;
 }
 
 mat-grid-tile{
@@ -70,6 +65,11 @@ mat-grid-tile-header{
   //align-items: center;
   position: center;
 
+}
+
+.form-container{
+  justify-content: center;
+  align-items: center;
 }
 
 .text-grid{

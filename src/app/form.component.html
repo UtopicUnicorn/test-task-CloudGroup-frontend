@@ -1,7 +1,8 @@
-  <div class="title">
-    <p>Новая задача</p>
-  </div>
-  <form novalidate [formGroup]="todoForm">
+<div class='form-container'>
+  <div >
+    <p class="title">Новая задача</p>
+  </div >
+  <form novalidate [formGroup]="todoForm" class='form-container'>
     <p>
       <mat-form-field class = "form">
         <input matInput formControlName="text" placeholder="Название задачи..." type="text" required>
@@ -16,9 +17,11 @@
       </mat-form-field>
 
     <div *ngIf="todoForm.value.category === 0">
+      <p>
       <mat-form-field class = "form">
         <input matInput formControlName="title" placeholder="Название новой категории..." type="text" required>
       </mat-form-field>
+      </p>
     </div>
 
     <div>
@@ -26,3 +29,4 @@
     <button mat-raised-button class="button" (click)="onSubmit()">ок</button>
     </div>
   </form>
+</div>

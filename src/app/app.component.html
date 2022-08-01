@@ -1,27 +1,29 @@
 <!--header start. May be should create new component for Header future logic-->
-  <mat-toolbar color="primary" class="header">
+<div class="header">
+  <mat-toolbar color="primary">
     <span class="spacer"></span>
   <h1 class="spacer">Задачи</h1>
       <mat-icon (click)="openDialog()">add</mat-icon>
   </mat-toolbar>
+</div>
 <!--header ends-->
 
 <!--body start-->
   <div fxFlex *ngIf="categories">
   <mat-grid-list [cols]="breakpoint" gutterSize="30px" rowHeight="300px" (window:resize)="onResize($event)">
-    <mat-grid-tile *ngFor="let category of categories; trackBy: trackByMethod" style="border: 2px solid black;" class='tile'>
+    <mat-grid-tile *ngFor="let category of categories;" style="border: 2px solid black;" class='tile'>
       <div class="tile">
       <mat-grid-tile-header>
         <h3 class="title">{{category.title}}</h3>
       </mat-grid-tile-header>
 
-        <div *ngFor="let todo of category.todos; trackBy: trackByMethod" class="todo">
+        <div *ngFor="let todo of category.todos;" class="todo">
 
           <div class="tmp">
             <input type="checkbox"
                  [value]="todo.id"
                  [checked]="todo.isCompleted"
-                 (change)="onChangeStatus($event)"
+                 (click)="changeStyle(todo)"
                  class="mat-checkbox">
             <span [ngClass] = "{'text-grid-line-through': todo.isCompleted}" class="text-grid"  >
               {{todo.text}}
