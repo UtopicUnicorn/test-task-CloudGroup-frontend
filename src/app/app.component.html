@@ -8,8 +8,8 @@
 
 <!--body start-->
   <div fxFlex *ngIf="categories">
-  <mat-grid-list cols="3" gutterSize="30px" rowHeight="300px">
-    <mat-grid-tile *ngFor="let category of categories; trackBy: trackByMethod" style="border: 2px solid black;">
+  <mat-grid-list [cols]="breakpoint" gutterSize="30px" rowHeight="300px" (window:resize)="onResize($event)">
+    <mat-grid-tile *ngFor="let category of categories; trackBy: trackByMethod" style="border: 2px solid black;" class='tile'>
       <div class="tile">
       <mat-grid-tile-header>
         <h3 class="title">{{category.title}}</h3>

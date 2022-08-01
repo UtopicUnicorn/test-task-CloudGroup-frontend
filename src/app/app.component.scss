@@ -60,6 +60,8 @@ mat-grid-tile-header{
 }
 
 .tile{
+  min-width: 200px;
+  max-width: 400px;
 }
 
 .tmp{
@@ -69,21 +71,18 @@ mat-grid-tile-header{
   position: center;
 
 }
-.textStatus{
-  text-decoration: line-through;
-}
+
 .text-grid{
-  flex: 1 1 auto;
   font-size: 18px;
-  //text-decoration: line-through;
+
 }
 
 .text-grid-line-through{
-  flex: 1 1 auto;
   text-decoration: line-through;
   font-size: 18px;
 }
 
 .mat-checkbox{
-  font-size: 36px;
+  //font-size: 36px;
 }
+

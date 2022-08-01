@@ -21,6 +21,7 @@ export class AppComponent implements OnInit {
 
   title = 'test-task-cloud-frontend';
   modal = false;
+  breakpoint!: number;
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
@@ -36,11 +37,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.breakpoint = window.innerWidth <= 400 ? 1 : 3;
     this.appService
       .getCategories()
       .subscribe(
         (categories: CategoryInterface[]) => (this.categories = categories)
       );
+  }
+
+  //check
+  onResize(event: Event) {
+    // @ts-ignore
+    this.breakpoint = event.target.innerWidth / 400;
   }
 
   trackByMethod(index: number, el: any): number {
