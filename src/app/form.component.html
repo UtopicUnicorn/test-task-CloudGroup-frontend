@@ -9,7 +9,7 @@
       </mat-form-field>
     </p>
       <mat-form-field class = "form">
-        <mat-select formControlName="category" [(value)]="defaultOption">
+        <mat-select formControlName="category" [(value)]="defaultOption" placeholder='Выберите категорию'>
           <mat-option  *ngFor="let category of categories" [value]="category.id">
             {{category.title}}
           </mat-option>
@@ -19,14 +19,14 @@
     <div *ngIf="todoForm.value.category === 0">
       <p>
       <mat-form-field class = "form">
-        <input matInput formControlName="title" placeholder="Название новой категории..." type="text" required>
+        <input matInput formControlName="title" placeholder="Название новой категории..." type="text">
       </mat-form-field>
       </p>
     </div>
 
-    <div>
+    <div class='buttons'>
     <button mat-raised-button class="button" (click)="onNoClick()">отмена</button>
-    <button mat-raised-button class="button" (click)="onSubmit()">ок</button>
+    <button mat-raised-button class="button" (click)="onSubmit()" [disabled]='todoForm.invalid'>ок</button>
     </div>
   </form>
 </div>

@@ -1,3 +1,4 @@
+<div class='container'>
 <!--header start. May be should create new component for Header future logic-->
 <div class="header">
   <mat-toolbar color="primary">
@@ -10,7 +11,7 @@
 
 <!--body start-->
   <div fxFlex *ngIf="categories">
-  <mat-grid-list [cols]="breakpoint" gutterSize="30px" rowHeight="300px" (window:resize)="onResize($event)">
+  <mat-grid-list [cols]="breakpoint" gutterSize="30px" rowHeight="300px" (window:resize)="onResize($event)" >
     <mat-grid-tile *ngFor="let category of categories;" style="border: 2px solid black;" class='tile'>
       <div class="tile">
       <mat-grid-tile-header>
@@ -36,3 +37,4 @@
   </mat-grid-list>
   </div>
 <!--body ends-->
+</div>

@@ -1,27 +1,37 @@
-# TestTaskCloudFrontend
+## Тестовое задание Облако Group frontend часть 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+## Загрузка репозитория
+```bash
+$ git clone git@github.com:UtopicUnicorn/test-task-CloudGroup-frontend.git
+```
+## Переход в директорю с проектом
+```bash
+$ cd test-task-CloudGroup-frontend
+```
 
-## Development server
+## Установка
+```bash
+$ npm install
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Запуск приложения
 
-## Code scaffolding
+```bash
+$ ng serve
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Этапы выполнения тестового задания
 
-## Build
+### Третий этап
+1. Инициализирован проект
+2. Добавлен nodejs сервер для работы приложения на Heroku
+3. Произведен деплой на Heroku
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Четвертый этап
+1. Реализовано приложение позволяющее добавлять и изменять статус задач
+2. Реализована возможность создания новой категории
+3. Произведен новый деплой на Heroku и произведена проерка работы с backend приложением
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Необходимые доработки
+1. Необходимо избавиться от вложенных subscribe

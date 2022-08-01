@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.breakpoint = window.innerWidth <= 400 ? 1 : 3;
+    this.breakpoint = window.innerWidth <= 400 ? 1 : window.innerWidth / 400;
     this.appService
       .getCategories()
       .subscribe(
@@ -53,7 +53,6 @@ export class AppComponent implements OnInit {
   }
 
   trackByMethod(index: number, el: any): number {
-    console.log(el);
     return el.id;
   }
 
@@ -72,10 +71,8 @@ export class AppComponent implements OnInit {
   }
 
   onChangeStatus($event: any) {
-    console.log($event.target);
     const id = $event.target.value;
     const value = $event.target.checked;
-    console.log(`${value}  ${id} `);
     const obj = {
       id: id,
       isCompleted: value,
@@ -140,9 +137,8 @@ export class DialogComponent implements OnInit {
   //send form
   onSubmit(): void {
     let categoryNew: CategoryInterface;
-
     //create new category and todo
-    if (this.todoForm.value.title != '' || this.todoForm.value.id == 0) {
+    if (this.todoForm.value.title != '' && this.todoForm.value.category == 0) {
       const obj = {
         title: this.todoForm.value.title,
       };
