@@ -8,7 +8,7 @@
 
 <!--body start-->
   <div fxFlex *ngIf="categories">
-  <mat-grid-list cols="3" gutterSize="30px">
+  <mat-grid-list cols="3" gutterSize="30px" rowHeight="300px">
     <mat-grid-tile *ngFor="let category of categories; trackBy: trackByMethod" style="border: 2px solid black;">
       <div class="tile">
       <mat-grid-tile-header>
@@ -16,9 +16,9 @@
       </mat-grid-tile-header>
 
         <div *ngFor="let todo of category.todos; trackBy: trackByMethod" class="todo">
-          <div class="tmp">
 
-          <input type="checkbox"
+          <div class="tmp">
+            <input type="checkbox"
                  [value]="todo.id"
                  [checked]="todo.isCompleted"
                  (change)="onChangeStatus($event)"

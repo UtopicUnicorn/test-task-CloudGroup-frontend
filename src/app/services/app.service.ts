@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CategoryInterface } from '../interfaces/category.interface';
 import { TodoInterface } from '../interfaces/todo.interface';
+import { backendURL } from '../requestUrl';
 
 @Injectable({
   providedIn: 'root',
@@ -11,37 +12,24 @@ export class AppService {
   constructor(private http: HttpClient) {}
 
   getCategories(): Observable<CategoryInterface[]> {
-    return this.http.get<CategoryInterface[]>(
-      'https://test-task-cloud.herokuapp.com/category'
-    );
+    return this.http.get<CategoryInterface[]>(backendURL + 'category');
   }
 
   getTodos(): Observable<TodoInterface[]> {
-    return this.http.get<TodoInterface[]>(
-      'https://test-task-cloud.herokuapp.com//todo'
-    );
+    return this.http.get<TodoInterface[]>(backendURL + 'todo');
   }
 
   createCategory(category: CategoryInterface): Observable<CategoryInterface> {
-    return this.http.post<CategoryInterface>(
-      'https://test-task-cloud.herokuapp.com/category',
-      category
-    );
+    console.log('created category');
+    return this.http.post<CategoryInterface>(backendURL + 'category', category);
   }
 
   createTodo(todo: TodoInterface): Observable<TodoInterface> {
-    console.log('here');
-    console.log(todo);
-    return this.http.post<TodoInterface>(
-      'https://test-task-cloud.herokuapp.com/todo',
-      todo
-    );
+    console.log('created todo');
+    return this.http.post<TodoInterface>(backendURL + 'todo', todo);
   }
 
   updateTodoStatus(todo: TodoInterface): Observable<TodoInterface> {
-    return this.http.patch<TodoInterface>(
-      'https://test-task-cloud.herokuapp.com/todo',
-      todo
-    );
+    return this.http.patch<TodoInterface>(backendURL + 'todo', todo);
   }
 }

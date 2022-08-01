@@ -117,7 +117,8 @@ export class DialogComponent implements OnInit {
   onSubmit(): void {
     let categoryNew: CategoryInterface;
 
-    if (this.todoForm.value.title != '' && this.todoForm.value.id == 0) {
+    //create new category and todo
+    if (this.todoForm.value.title != '' || this.todoForm.value.id == 0) {
       const obj = {
         title: this.todoForm.value.title,
       };
@@ -140,6 +141,7 @@ export class DialogComponent implements OnInit {
       return;
     }
 
+    //create only todo
     let obj = {
       text: this.todoForm.value.text,
       categoryId: this.todoForm.value.category,
