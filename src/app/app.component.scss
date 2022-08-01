@@ -1,0 +1,91 @@
+.header{
+  justify-content: center;
+  align-content: end;
+  flex-direction: row;
+}
+
+.spacer{
+  flex: 1 1 auto;
+  margin: 40px;
+}
+
+.category{
+  margin: 12px 0;
+}
+
+.checkbox{
+  margin: 0 12px;
+}
+
+.title{
+  justify-content: center;
+  align-items: center;
+}
+
+.button{
+  margin: 20px;
+  width: 150px;
+  text-transform: uppercase;
+}
+
+.form{
+  width: 90%;
+  border-width: 1px;
+  border-color: #000;
+}
+.title{
+  //justify-content: center;
+  //align-content: center;
+  //flex-direction: row;
+}
+
+mat-grid-tile{
+  flex-direction: row;
+  flex: 1 1 auto;
+  margin: 20px;
+
+}
+
+mat-grid-list{
+  margin: 50px;
+  //width: 1000px;
+}
+
+mat-grid-tile-header{
+  justify-content: center;
+}
+
+.todo{
+  flex-direction: row;
+}
+
+.tile{
+}
+
+.tmp{
+  margin-top: 20px;
+  //justify-content: center;
+  //align-items: center;
+  position: center;
+
+}
+.textStatus{
+  text-decoration: line-through;
+}
+.text-grid{
+  flex: 1 1 auto;
+  margin: 100px;
+  font-size: 18px;
+  //text-decoration: line-through;
+}
+
+.text-grid-line-through{
+  flex: 1 1 auto;
+  margin: 100px;
+  text-decoration: line-through;
+  font-size: 18px;
+}
+
+.mat-checkbox{
+  font-size: 36px;
+}
